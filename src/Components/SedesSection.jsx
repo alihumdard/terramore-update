@@ -52,7 +52,7 @@ export default function SedesSection() {
               key={sede.nombre}
               className="bg-[#162713] border border-white/5 rounded-3xl overflow-hidden shadow-2xl flex flex-col"
             >
-              {/* MAP */}
+              {/* Map */}
               <div className="relative h-56 md:h-64">
                 <iframe
                   title={`Mapa sede ${sede.nombre}`}
@@ -63,14 +63,14 @@ export default function SedesSection() {
                 />
               </div>
 
-              {/* CONTENT */}
+              {/* Content */}
               <div className="flex flex-col gap-4 p-7 md:p-9">
-                {/* LOCATION TITLE */}
+                {/* Title */}
                 <h3 className="text-h2 font-black tracking-display uppercase text-[#dfd0bd]">
                   {sede.nombre}
                 </h3>
 
-                {/* ADDRESS - FULL WIDTH */}
+                {/* Address */}
                 <div className="flex items-start gap-3">
                   <svg
                     className="w-5 h-5 mt-1 shrink-0 text-white/70"
@@ -88,8 +88,14 @@ export default function SedesSection() {
                   </p>
                 </div>
 
-                {/* HOURS - 2 COLUMNS */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
+                {/* Hours */}
+                <div
+                  className={
+                    sede.nombre === "Córdoba"
+                      ? "grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3"
+                      : "flex flex-col gap-2"
+                  }
+                >
                   {sede.hours.map((h) => (
                     <div
                       key={h.label}
@@ -116,7 +122,7 @@ export default function SedesSection() {
                   ))}
                 </div>
 
-                {/* APPOINTMENT */}
+                {/* Appointment */}
                 <div className="flex items-center gap-3">
                   <svg
                     className="w-5 h-5 shrink-0 text-white/70"
@@ -143,7 +149,7 @@ export default function SedesSection() {
                   </p>
                 </div>
 
-                {/* WHATSAPP */}
+                {/* WhatsApp */}
                 <a
                   href={`https://web.whatsapp.com/send?phone=${sede.whatsapp}&text=${encodeURIComponent(
                     SITE.whatsappMessage
