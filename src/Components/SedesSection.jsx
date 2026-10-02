@@ -5,10 +5,13 @@ const sedes = [
   {
     nombre: "Córdoba",
     address: "Pulqui · Industria Cultural · Rodríguez Peña 455 · Córdoba",
-    hours: [
-      { label: "Lunes a miércoles", time: "10 a 17 hs" },
-      { label: "Jueves y viernes", time: "10 a 20 hs" },
-    ],
+hours: [
+  { label: "Lunes", time: "11 a 20 hs" },
+  { label: "Martes", time: "11 a 20 hs" },
+  { label: "Miércoles", time: "11 a 20 hs" },
+  { label: "Jueves", time: "11 a 21 hs" },
+  { label: "Viernes", time: "11 a 21 hs" },
+],
     phone: "+54 9 351 680 9346",
     whatsapp: SITE.whatsapp.cordoba,
     map: "https://www.google.com/maps?q=Pulqui+Industria+Cultural+Rodriguez+Peña+455+Cordoba&output=embed",
