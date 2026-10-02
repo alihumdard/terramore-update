@@ -64,7 +64,7 @@ export default function SedesSection() {
               </div>
 
               {/* Content */}
-              <div className="flex flex-col gap-4 p-7 md:p-9">
+              <div className="flex flex-1 flex-col gap-4 p-7 md:p-9">
                 {/* Title */}
                 <h3 className="text-h2 font-black tracking-display uppercase text-[#dfd0bd]">
                   {sede.nombre}
@@ -156,7 +156,7 @@ export default function SedesSection() {
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-2 inline-flex items-center justify-center gap-2 bg-[#dfd0bd] hover:bg-white text-[#162713] font-black text-sm uppercase tracking-[0.15em] py-3.5 px-6 rounded-full transition-colors duration-300"
+                  className="mt-auto inline-flex w-full items-center justify-center gap-2 bg-[#dfd0bd] hover:bg-white text-[#162713] font-black text-sm uppercase tracking-[0.15em] py-3.5 px-6 rounded-full transition-colors duration-300"
                 >
                   <svg
                     className="w-4 h-4"
