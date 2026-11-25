@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { SITE } from "@/lib/products";
+import { SITE, waLink } from "@/lib/products";
 
 const CTAS = [
   { label: "WhatsApp Córdoba", number: SITE.whatsapp.cordoba },
@@ -52,7 +52,7 @@ export default function HeroSection() {
           {CTAS.map((cta) => (
             <a
               key={cta.label}
-              href={`https://web.whatsapp.com/send?phone=${cta.number}&text=${encodeURIComponent(SITE.whatsappMessage)}`}
+              href={waLink(cta.number)}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto min-w-0 inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-white text-white rounded-full font-bold uppercase tracking-widest text-sm hover:bg-white hover:text-black transition-all duration-300 backdrop-blur-[2px] whitespace-nowrap font-myriad-pro"

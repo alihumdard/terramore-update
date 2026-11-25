@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { SITE, products } from "@/lib/products";
+import { SITE, products, waLink } from "@/lib/products";
 
 export default function ProductSection() {
   return (
@@ -76,7 +76,7 @@ export default function ProductSection() {
                   Ver producto
                 </Link>
                 <a
-                  href={`https://web.whatsapp.com/send?phone=${SITE.whatsapp.cordoba}&text=${encodeURIComponent(SITE.whatsappMessage)}`}
+                  href={waLink(SITE.whatsapp.cordoba)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-1 text-xs md:text-sm text-white/70 hover:text-[#dfd0bd] font-bold uppercase tracking-wider transition-colors"

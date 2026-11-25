@@ -190,3 +190,19 @@ export const getProductBySlug = (slug) => products.find((p) => p.slug === slug) 
 
 export const getRelatedProducts = (slug, limit = 3) =>
   products.filter((p) => p.slug !== slug).slice(0, limit);
+
+/**
+ * Build a WhatsApp deep link.
+ *
+ * Uses wa.me (WhatsApp's official universal link) rather than
+ * web.whatsapp.com/send: on mobile wa.me hands off to the installed
+ * WhatsApp app, while web.whatsapp.com keeps the user in the browser.
+ *
+ * @param {string} number  Phone in international format, digits only (e.g. "5493516809346").
+ * @param {string} [message]  Optional prefilled text; defaults to SITE.whatsappMessage.
+ */
+export function waLink(number, message = SITE.whatsappMessage) {
+  const digits = String(number ?? "").replace(/\D/g, "");
+  const base = `https://wa.me/${digits}`;
+  return message ? `${base}?text=${encodeURIComponent(message)}` : base;
+}

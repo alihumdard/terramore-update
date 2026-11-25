@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { SITE } from "@/lib/products";
+import { SITE, waLink } from "@/lib/products";
 
 export default function RoblesSection() {
   return (
@@ -49,7 +49,7 @@ export default function RoblesSection() {
           </p>
 
           <a
-            href={`https://web.whatsapp.com/send?phone=${SITE.whatsapp.baires}&text=${encodeURIComponent(SITE.whatsappMessage)}`}
+            href={waLink(SITE.whatsapp.baires)}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-2 inline-flex items-center justify-center gap-2 bg-[#dfd0bd] hover:bg-white text-[#162713] font-black text-sm uppercase tracking-[0.15em] py-3.5 px-8 rounded-full transition-colors duration-300 w-full sm:w-fit"

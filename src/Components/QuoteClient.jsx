@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { SITE, products } from "@/lib/products";
+import { SITE, products, waLink } from "@/lib/products";
 
 const tipos = [
   "Aceite medicinal",
@@ -44,8 +44,10 @@ export default function QuoteClient() {
       .filter(Boolean)
       .join("\n");
 
-    const waHref = `https://web.whatsapp.com/send?phone=${SITE.whatsapp.cordoba}&text=${encodeURIComponent(message)}`;
-    window.open(waHref, "_blank", "noopener,noreferrer");
+    const waHref = waLink(SITE.whatsapp.cordoba, message);
+    // Assign location rather than window.open: on mobile a popup is often
+    // blocked from handing off to the WhatsApp app, leaving the user in the browser.
+    window.location.href = waHref;
     setSent(true);
   };
 
@@ -232,7 +234,7 @@ export default function QuoteClient() {
             Si preferís, escribinos directamente:
           </p>
           <a
-            href={`https://web.whatsapp.com/send?phone=${SITE.whatsapp.cordoba}&text=${encodeURIComponent(SITE.whatsappMessage)}`}
+            href={waLink(SITE.whatsapp.cordoba)}
             target="_blank"
             rel="noopener noreferrer"
             className="text-center border border-[#dfd0bd]/50 hover:bg-[#dfd0bd]/10 text-[#dfd0bd] font-bold text-sm uppercase tracking-widest py-3.5 px-6 rounded-full transition-colors"

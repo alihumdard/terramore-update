@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { useCart } from "@/context/CartContext";
-import { SITE } from "@/lib/products";
+import { SITE, waLink } from "@/lib/products";
 
 export default function ProductDetailClient({ product }) {
   const { addItem } = useCart();
@@ -17,9 +17,7 @@ export default function ProductDetailClient({ product }) {
     window.setTimeout(() => setAdded(false), 1600);
   };
 
-  const waHref = `https://web.whatsapp.com/send?phone=${SITE.whatsapp.cordoba}&text=${encodeURIComponent(
-    SITE.whatsappMessage,
-  )}`;
+  const waHref = waLink(SITE.whatsapp.cordoba);
 
   return (
     <>

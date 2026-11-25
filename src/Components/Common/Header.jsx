@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useCart } from "@/context/CartContext";
-import { SITE } from "@/lib/products";
+import { SITE, waLink } from "@/lib/products";
 
 const NAV_LINKS = [
   { label: "Inicio", href: "/" },
@@ -18,9 +18,7 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const { count, ready } = useCart();
 
-  const waHref = `https://web.whatsapp.com/send?phone=${SITE.whatsapp.cordoba}&text=${encodeURIComponent(
-    SITE.whatsappMessage,
-  )}`;
+  const waHref = waLink(SITE.whatsapp.cordoba);
 
   useEffect(() => {
     const handleScroll = () => {

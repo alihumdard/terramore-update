@@ -1,5 +1,5 @@
 import React from "react";
-import { SITE } from "@/lib/products";
+import { SITE, waLink } from "@/lib/products";
 
 const sedes = [
   {
@@ -151,9 +151,7 @@ export default function SedesSection() {
 
                 {/* WhatsApp */}
                 <a
-                  href={`https://web.whatsapp.com/send?phone=${sede.whatsapp}&text=${encodeURIComponent(
-                    SITE.whatsappMessage
-                  )}`}
+                  href={waLink(sede.whatsapp)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-auto inline-flex w-full items-center justify-center gap-2 bg-[#dfd0bd] hover:bg-white text-[#162713] font-black text-sm uppercase tracking-[0.15em] py-3.5 px-6 rounded-full transition-colors duration-300"

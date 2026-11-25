@@ -1,5 +1,9 @@
 import { products, SITE } from "@/lib/products";
 
+// Required by output: "export" — tells Next to emit sitemap.xml at build
+// time instead of serving it from a running server.
+export const dynamic = "force-static";
+
 export default function sitemap() {
   const base = SITE.domain;
 

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { SITE } from "@/lib/products";
+import { SITE, waLink } from "@/lib/products";
 
 export default function Footer() {
   const navigation = [
@@ -47,7 +47,7 @@ export default function Footer() {
               Cotizar ahora
             </Link>
             <a
-              href={`https://web.whatsapp.com/send?phone=${SITE.whatsapp.cordoba}&text=${encodeURIComponent(SITE.whatsappMessage)}`}
+              href={waLink(SITE.whatsapp.cordoba)}
               target="_blank"
               rel="noopener noreferrer"
               className="border border-[#dfd0bd]/50 hover:bg-[#dfd0bd]/10 text-[#dfd0bd] font-bold text-sm uppercase tracking-[0.15em] py-3.5 px-8 rounded-full transition-colors w-full sm:w-auto"
@@ -82,7 +82,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-3 pt-1">
               <a
-                href={`https://web.whatsapp.com/send?phone=${SITE.whatsapp.cordoba}&text=${encodeURIComponent(SITE.whatsappMessage)}`}
+                href={waLink(SITE.whatsapp.cordoba)}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
@@ -173,7 +173,7 @@ export default function Footer() {
               {whatsapps.map((w) => (
                 <li key={w.label}>
                   <a
-                    href={`https://web.whatsapp.com/send?phone=${w.number}&text=${encodeURIComponent(SITE.whatsappMessage)}`}
+                    href={waLink(w.number)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white/75 hover:text-[#dfd0bd] hover:underline underline-offset-4 decoration-[#dfd0bd]/70 text-body font-normal transition-colors duration-200 inline-block"

@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { SITE } from "@/lib/products";
+import { SITE, waLink } from "@/lib/products";
 
 export default function SplitIntroSection() {
   return (
@@ -61,7 +61,7 @@ export default function SplitIntroSection() {
           {/* Centered Button Area with Increased Top Gap */}
           <div className="pt-6 md:pt-25 w-full flex justify-center">
             <a
-              href={`https://web.whatsapp.com/send?phone=${SITE.whatsapp.cordoba}&text=${encodeURIComponent(SITE.whatsappMessage)}`}
+              href={waLink(SITE.whatsapp.cordoba)}
               target="_blank"
               rel="noopener noreferrer"
               className="border border-[#fdfcf7]/80 hover:bg-white/10 text-[#fdfcf7] font-bold text-sm tracking-widest uppercase py-3 px-6 rounded-full transition-colors duration-200 w-full sm:w-auto sm:min-w-60 text-center leading-tight mx-auto md:mx-0 block"

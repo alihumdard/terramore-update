@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
-import { SITE, products } from "@/lib/products";
+import { SITE, products, waLink } from "@/lib/products";
 
 export default function CartClient() {
   const { items, updateQty, removeItem, clear, count, ready } = useCart();
@@ -22,7 +22,7 @@ export default function CartClient() {
     ...rows.map(({ product, qty }) => `- ${product.nombre} (x${qty})`),
   ].join("\n");
 
-  const waHref = `https://web.whatsapp.com/send?phone=${SITE.whatsapp.cordoba}&text=${encodeURIComponent(waMessage)}`;
+  const waHref = waLink(SITE.whatsapp.cordoba, waMessage);
 
   if (!ready) {
     return (
